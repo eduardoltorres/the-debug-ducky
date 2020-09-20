@@ -1,6 +1,8 @@
 # The Debug Ducky
 A twitter bot that automatically retweets, likes, and replies on matters related to Harvard's CS50 course. The bot is available at [@thedebugducky](https://twitter.com/thedebugducky) on Twitter.
 
+![](https://raw.githubusercontent.com/eduardoltorres/the-debug-ducky/master/the-debug-ducky.png)
+
 ## Features & Functionalities
 - Automatically retweets:
     * tweets with one or more of the following hashtags: [#CS50](https://twitter.com/hashtag/CS50?src=hashtag_click) or [#CS50x](https://twitter.com/hashtag/CS50x?src=hashtag_click)
