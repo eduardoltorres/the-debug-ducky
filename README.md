@@ -17,3 +17,6 @@ In addition to the previous functionalities, while the application is running, t
 
 ## Technologies
 The bot is built with Python. It uses the Tweepy package to connect to the Twitter API; more specifically, it uses the Cursor and the Stream Listener functionalities. For logging, it uses Python's logging module.
+
+## License
+Thise project is licensed under the MIT License - see the [LICENSE](https://github.com/eduardoltorres/the-debug-ducky/blob/master/LICENSE) file for details.
