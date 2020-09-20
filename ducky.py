@@ -23,7 +23,7 @@ class MyStreamListener(tweepy.StreamListener):
         else:
             logger.error(f"Error {status_code} on listener.", exc_info=True)
 
-def reply_to_mentions(api, keywords, since_id):
+def reply_to_mentions(api, since_id):
     recent_since_id = since_id
     replies = ["Hi there! The debugging ducky here. How can I help you? 8)",
                 "Hiya! How's it going? :)",
@@ -33,7 +33,7 @@ def reply_to_mentions(api, keywords, since_id):
     for status in tweepy.Cursor(api.mentions_timeline, since_id=since_id).items():
         random_idx = randrange(5)
         recent_since_id = max(status.id, recent_since_id)
-        if any(keyword in status.text.lower() for keyword in keywords):
+        if "this is cs50" in status.text.lower():
             logger.info(f"Replying 'This is CS50!' to @{status.user.screen_name}...")
             try:
                 api.update_status(status=f"This is CS50! @{status.user.screen_name}", in_reply_to_status_id=status.id)
@@ -41,7 +41,7 @@ def reply_to_mentions(api, keywords, since_id):
             except Exception as e:
                 logger.info(f"{e} while replying 'This is CS50!'.")
                 return recent_since_id 
-        else:
+        elif "hello" in status.text.lower():
             logger.info(f"Replying to @{status.user.screen_name}...")
             try:
                 api.update_status(status=f"{replies[random_idx]} @{status.user.screen_name}", in_reply_to_status_id=status.id)
@@ -87,7 +87,7 @@ def main(keywords):
     since_id = get_latest_mention_id(api) + 1
     while True:
         logger.info("Checking mentions...")
-        since_id = reply_to_mentions(api, ["cs50"], since_id)
+        since_id = reply_to_mentions(api, since_id)
 
         logger.info("Checking @davidjmalan's tweets...")
         favorite_and_retweet_user_status(api, "davidjmalan")
@@ -101,6 +101,6 @@ def main(keywords):
 
 if __name__ == '__main__':
     try:
-        main(['#CS50','#CS50x','CS50','CS50x'])
+        main(['#CS50','#CS50x'])
     except Exception as e:
         logger.error(f"{e} on main.", exc_info=True)
