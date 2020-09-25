@@ -91,8 +91,8 @@ def main(keywords):
         logger.info("Checking @cs50's tweets...")
         favorite_and_retweet_user_status(api, "cs50")
 
-        logger.info("Sleeping for 1 minute...")
-        sleep(60)
+        logger.info("Sleeping for 1 hour...")
+        sleep(60 * 60)
     logging.info("main has returned.")
 
 if __name__ == '__main__':
