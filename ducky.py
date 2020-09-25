@@ -63,8 +63,6 @@ def favorite_and_retweet_user_status(api, user):
                 logger.info(f"@{user}'s latest status has been successfully liked.")
             except Exception as e:
                 logger.error(f"{e} while attempting to favorite @{user}'s latest status.", exc_info=True)
-        elif status.favorited:
-            logger.info(f"@{user}'s latest status has already been liked.")
 
         if not status.retweeted:
             try:
@@ -72,8 +70,6 @@ def favorite_and_retweet_user_status(api, user):
                 logger.info(f"@{user}'s latest status has been successfully retweeted.")
             except Exception as e:
                 logger.error(f"{e} while attempting to retweet @{user}'s latest status.", exc_info=True)
-        elif status.retweeted:
-            logger.info(f"@{user}'s latest status has already been retweeted.")
 
 def main(keywords):
     api = create_api()
