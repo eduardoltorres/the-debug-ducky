@@ -77,7 +77,7 @@ def main(keywords):
     myStream = tweepy.Stream(api.auth, myStreamListener)
 
     logger.info("Connecting to Stream...")
-    myStream.filter(track=keywords, languages=['en'], is_async=True)
+    myStream.filter(track=keywords, languages=['en'], is_async=True, stall_warnings=True)
     logger.info("Connected to Stream.")
 
     since_id = get_latest_mention_id(api) + 1
