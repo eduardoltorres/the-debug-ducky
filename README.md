@@ -1,4 +1,7 @@
 # The Debug Ducky
+
+_**Update (March 31st, 2023)**: due to Twitter API's [update on access tiers and pricing](https://twittercommunity.com/t/announcing-new-access-tiers-for-the-twitter-api/188728), The Debug Ducky will remain offline for the time being._
+
 A twitter bot that automatically retweets, likes, and replies on matters related to [Harvard's CS50](https://cs50.harvard.edu/x/2020/) course. The bot is available at [@thedebugducky](https://twitter.com/thedebugducky) on Twitter.
 
 ![](https://raw.githubusercontent.com/eduardoltorres/the-debug-ducky/master/the-debug-ducky.png)
